@@ -1,0 +1,31 @@
+{
+    "name": "pacolu/contao-real-estate-manager",
+    "type": "contao-bundle",
+    "description": "Adds real estate management to Contao 4",
+    "license": "LGPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Benjamin Heuer",
+            "homepage": "https://github.com/Pacolu"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "contao/core-bundle": "^4.4"
+    },
+	"require-dev": {
+		"contao/manager-plugin": "^2.0"
+	},
+	"conflict": {
+		"contao/core": "*",
+		"contao/manager-plugin": "<2.0 || >=3.0"
+	},
+	"extra": {
+		 "contao-manager-plugin": "Pacolu\\RealEstateBundle\\ContaoManagerPlugin"
+	},
+    "autoload": {
+        "psr-4": {
+            "Pacolu\\RealEstateBundle\\": "src/"
+        }
+    }
+}
