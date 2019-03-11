@@ -1,0 +1,126 @@
+<?php
+    global $objPage;
+    if($objPage){
+        $objPage->pageTitle .= $this->preview['Titel'];
+    }
+
+?>
+  <div class="detail-page">
+      <?php $this->Import('Environment'); if( (sha1(session_id().(!$GLOBALS['TL_CONFIG']['disableIpCheck'] ? $this->Environment->ip : '').'BE_USER_AUTH') == $this->Input->cookie('BE_USER_AUTH'))): ?>
+      <a class="print_it" href="javascript:window.print()"> <img src="/files/default/images/print.gif" width="20" height="16" border="0" alt=""> </a>
+      <?php endif; ?>
+    <a href="javascript:history.go(-1)" class="back-link">&lt; zur&uuml;ck zur &Uuml;bersicht</a>
+    <div class="upperpage clearfix">
+      <div class="left-page">
+          <?php
+            $bild = $this->preview['Bild1'];
+            if(file_exists($bild)){
+                    $bildinfos = getimagesize($bild);
+                    $format=$bildinfos[1]/$bildinfos[0];
+                if($bildinfos[0] > 440 ){
+                    $bildinfos[0] = 440;
+                    $bildinfos[1] = 440 * $format;
+                }
+                if($bildinfos[1] > 305 ){
+                    $bildinfos[1] = 305;
+                    $bildinfos[0] = 305 / $format;
+                }
+            }
+
+          ?> 
+        <a class="lightbox-image" data-fancybox-group="gallery" href="<?php echo $this->preview['Bild1'] ?>"><img src="<?php echo $this->preview['Bild1'] ?>" width="<?php echo $bildinfos[0]; ?>" height="<?php echo $bildinfos[1]; ?>" alt="<?php echo $this->preview['Titel'] ?>" /></a>
+        <div class="media-gallerie">
+            <?php $bilderGalerie = $this->preview['Bildx']; if(!empty($bilderGalerie)): ?>
+                <?php foreach (deserialize($this->preview['Bildx']) as $image): ?>
+                    <a class="lightbox-image" data-fancybox-group="gallery" href="<?php echo $image ?>"><img src="<?php echo $image ?>" width="115px" height="85px" alt="<?php echo $this->preview['Titel'] ?>" /></a>
+                <?php endforeach; ?>
+            <?php endif; ?>
+        </div>
+      </div>
+      <div class="right-page">
+        <div class="teasing">
+          <h3><?php echo $this->preview['Titel'] ?></h3>
+          Expos&eacute; Nr.: <?php echo $this->preview['Expose-Nr'] ?>
+          <table class="info-details">
+            <tbody>
+              <?php
+                $firstcheck = 1; 
+                foreach ($this->infobox as $key => $value) {
+                  if($value == '' || $value == ' &euro;' || $value == ' m&sup2;'){
+                    continue;
+                  }else{
+                    if($firstcheck == 1){
+                      $key = str_replace(array('ue', 'ae', 'oe'), array('&uuml;', '&auml;', '&ouml;'), $key);
+                      echo "<tr><td class='first'>".$key.":</td><td class='first'>".$value."</td></tr>";
+                      $firstcheck = 0;
+                    }else{
+                      $key = str_replace(array('ue', 'ae', 'oe'), array('&uuml;', '&auml;', '&ouml;'), $key);
+                      echo "<tr><td>".$key.":</td><td>".$value."</td></tr>";
+                    }
+                  }
+                }
+                if(isset($this->energy)){
+                  echo '<tr><td>Energieausweis:</td><td><p><img src="'.$this->energy["icon"].'" width="18" height="18" alt="'.$this->energy["mime"].'" class="mime_icon"> <a href="'.$this->energy["href"].'" title="'.$this->energy["title"].'">'.$this->energy["link"].' <span class="size">('.$this->energy["filesize"].')</span></a></p></td></tr>';
+                }
+              ?>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="bottompage clearfix">
+      <div class="left-page">
+        <h2>Zusatzinformationen</h2>
+        <table class="extra-details">
+          <tbody>
+            <?php 
+              foreach ($this->extra as $key => $value) {
+                if($value == '' || $value == ' &euro;' || $value == ' m&sup2;'){
+                  continue;
+                }else{
+                  if($key == 'Zusatzinformationen'){                  
+                    if(isset($this->expose)){
+                      echo '<tr><td>Expos&eacute;:</td><td><p><img src="'.$this->expose["icon"].'" width="18" height="18" alt="'.$this->expose["mime"].'" class="mime_icon"> <a href="'.$this->expose["href"].'" title="'.$this->expose["title"].'">'.$this->expose["link"].' <span class="size">('.$this->expose["filesize"].')</span></a></p></td></tr>';
+                    }
+                    echo "<tr><td colspan='2'><h2>Besonderheiten</h2></td></tr>";
+                    echo "<tr><td colspan='2'>".$value."</td></tr>";
+                  }else{
+                    $key = str_replace(array('ue', 'ae', 'oe'), array('&uuml;', '&auml;', '&ouml;'), $key);
+                    echo "<tr><td>".$key.":</td><td>".$value."</td></tr>";
+                  }
+                }
+              }
+            ?>
+          </tbody>
+        </table>
+      </div>
+      <div class="right-page">
+        {{insert_module::12}}
+      </div>
+    </div>
+    <script>
+    // remap jQuery to $
+    (function ($) {
+    
+			// Change title type, overlay closing speed
+			$(".lightbox-image").fancybox({
+				helpers: {
+					title : {
+						type : 'outside'
+					},
+					overlay : {
+						speedOut : 0
+					}
+				}
+			});
+      
+      // Change h1 to h2 Tag
+      $('.mod_form.tableless').find('h2').replaceWith(function() {
+                return '<h2>Interesse an diesem Objekt?</h2>';
+      });
+      
+      // Change Object-Referenz
+      $('input[name="Objektreferenz"]').attr('value','<?php echo $this->preview["Expose-Nr"] ?>');
+    })(window.jQuery);
+    </script>
+  </div>

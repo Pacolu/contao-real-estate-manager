@@ -1,0 +1,101 @@
+<div class="objektkat">
+  <?php $counter=0; ?>
+  <?php foreach ($this->objekte as $objekt): ?>
+    <?php if($counter!=0): ?>
+      <figure class="image_container">
+        <img class="no-border" width="775" height="25" alt="Border" src="files/default/images/bg-line-main-2.png" />
+      </figure>
+    <?php endif; ?>
+    <div class="tease Objekt-<?php echo $objekt['id']; ?> clearfix">
+      <div class="list-image">
+        <?php if($objekt['tohave'] == false){
+          if($objekt['Kategorie']  == '3'){
+            echo '<span class="sellinfo">Verkauft</span>';
+          }else{ 
+            echo '<span class="sellinfo">Vermietet</span>';
+          }
+        } ?>
+         <?php
+            $bildinfos = getimagesize($objekt['Bild1']);
+            $format=$bildinfos[1]/$bildinfos[0];
+            if($bildinfos[0] > 235 ){
+              $bildinfos[0] = 235;
+              $bildinfos[1] = 235 * $format;
+            }
+            if($bildinfos[1] > 180 ){
+              $bildinfos[1] = 180;
+              $bildinfos[0] = 180 / $format;
+            }
+          ?> 
+        <img src="<?php echo $objekt['Bild1']; ?>" width="<?php echo $bildinfos[0]; ?>" height="<?php echo $bildinfos[1]; ?>" alt="<?php echo $objekt['alt']; ?>" />
+        <div class="img-shadow">
+          <img class="no-border" width="<?php echo $bildinfos[0]; ?>" height="15" alt="Shadow" src="files/default/images/img-shadow.png" />
+        </div>
+      </div>
+      <div class="list-infos">
+        <div class="upperpage clearfix<?php if($objekt['Kategorie'] == 4 || $objekt['Kategorie'] == 5 ){echo ' reference';}?>">
+          <div class="left">
+            <h2><?php echo $objekt['Titel']; ?></h2>
+            <table>
+              <tbody>
+                <tr>
+                <td>Ort:</td>
+                <td><?php echo $objekt['Lage'] ?></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="right">
+            Expos&eacute; Nr.: <?php echo $objekt['Expose-Nr'] ?>
+          </div>
+        </div>
+        <div class="bottompage clearfix<?php if($objekt['Kategorie'] == 4 || $objekt['Kategorie'] == 5 ){echo ' reference';}?>">
+          <div class="left">
+            <?php if($objekt['Kategorie'] == 4 || $objekt['Kategorie'] == 5 ): ?>
+              <?php echo $objekt['Leistungen']; ?>
+              <?php $counter++; ?>
+            <?php else: ?>
+            <table class="info-details">
+              <tbody>
+                <?php
+                  $firstcheck = 1; 
+                  foreach ($this->objektdaten[$counter] as $key => $value) {
+                    if($value == '' || $value == ' &euro;' || $value == ' m&sup2;' || $value == ' &euro; p.a.'){
+                      continue;
+                    }else{
+                      if($firstcheck == 1){
+                        $key = str_replace(array('ue', 'ae', 'oe'), array('&uuml;', '&auml;', '&ouml;'), $key);
+                        echo "<tr><td class='first'>".$key.":</td><td class='first'>".$value."</td></tr>";
+                        $firstcheck = 0;
+                      }else{
+                        $key = str_replace(array('ue', 'ae', 'oe'), array('&uuml;', '&auml;', '&ouml;'), $key);
+                        echo "<tr><td>".$key.":</td><td>".$value."</td></tr>";
+                      }
+                    }
+                  }
+                  $counter++;
+                ?>
+              </tbody>
+            </table>
+            <?php endif; ?>
+          </div>
+          <div class="right">
+            <?php if($objekt['Kategorie'] == 4 || $objekt['Kategorie'] == 5 ): ?>
+              <?php echo $objekt['Zusatzinformation']; ?>
+              <?php $counter++; ?>
+            <?php else: ?>
+              <?php if($objekt['tohave'] == true): ?>
+                <a class="moreteasing button" href="<?php echo $objekt['href']; ?>">Details Ansehen</a>
+              <?php endif; ?>
+            <?php endif; ?>
+          </div>
+        </div>
+      </div>
+    </div>
+  <?php endforeach; ?>
+    <div class="teasepagination">
+    <?php foreach ($this->objekte as $objekt): ?>
+      <a style="display:none;" href="javascript:void(0);" title="Objekt-<?php echo $objekt['id']; ?>">Klick</a> 
+    <?php endforeach; ?>
+    </div>
+</div>

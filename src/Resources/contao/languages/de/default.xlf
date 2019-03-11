@@ -1,0 +1,14 @@
+<?xml version="1.0" ?><xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/default.php" source-language="en" target-language="de">
+    <body>
+      <trans-unit id="MSC.cal_events">
+        <source>%d event(s)</source>
+        <target>%d begivenheder</target>
+      </trans-unit>
+      <trans-unit id="MSC.cal_previous">
+        <source>&amp;lt;</source>
+        <target>&lt;</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
