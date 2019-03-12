@@ -131,7 +131,7 @@ $GLOBALS['TL_DCA']['tl_estates'] = array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['location'],
             'inputType' => 'textarea',
-            'eval'      => array('mandatory' => true, 'rte' => 'tinyFlash', 'tl_class' => 'w100'),
+            'eval'      => array('mandatory' => true, 'rte' => 'tinyMCE', 'tl_class' => 'w100'),
             'sql'       => "text NULL"
         ),
         'floor'                => array
@@ -206,8 +206,8 @@ $GLOBALS['TL_DCA']['tl_estates'] = array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['energy_certificate'],
             'inputType' => 'fileTree',
-            'eval'      => array('fieldType' => 'radio', 'files' => true, 'extensions' => 'pdf'),
-            'sql'       => "varchar(256) NOT NULL default ''"
+            'eval'      => array('fieldType' => 'radio', 'files' => true, 'filesOnly' => true, 'extensions' => 'pdf'),
+            'sql'       => "binary(16) NULL"
         ),
         'bail'                 => array
         (
@@ -353,7 +353,7 @@ $GLOBALS['TL_DCA']['tl_estates'] = array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['information'],
             'inputType' => 'textarea',
-            'eval'      => array('rte' => 'tinyFlash', 'tl_class' => 'w100'),
+            'eval'      => array('rte' => 'tinyMCE', 'tl_class' => 'w100'),
             'sql'       => "text NULL"
         ),
         'object_id'            => array
@@ -374,28 +374,28 @@ $GLOBALS['TL_DCA']['tl_estates'] = array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['display_picture'],
             'inputType' => 'fileTree',
-            'eval'      => array('fieldType' => 'radio', 'files' => true, 'extensions' => 'jpg,jpeg,gif,png,tif,tiff'),
-            'sql'       => "varchar(256) NOT NULL default ''"
+            'eval'      => array('fieldType' => 'radio', 'files' => true, 'filesOnly' => true, 'extensions' => Contao\Config::get('validImageTypes')),
+            'sql'       => "binary(16) NULL"
         ),
         'gallery'              => array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['gallery'],
             'inputType' => 'fileTree',
-            'eval'      => array('fieldType' => 'checkbox', 'files' => true, 'extensions' => 'jpg,jpeg,gif,png,tif,tiff'),
+            'eval'      => array('fieldType' => 'checkbox', 'multiple' => true, 'files' => true, 'filesOnly' => true, 'extensions' => Contao\Config::get('validImageTypes')),
             'sql'       => "blob NULL"
         ),
         'expose_pdf'           => array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['expose_pdf'],
             'inputType' => 'fileTree',
-            'eval'      => array('fieldType' => 'radio', 'files' => true, 'extensions' => 'pdf'),
-            'sql'       => "varchar(256) NOT NULL default ''"
+            'eval'      => array('fieldType' => 'radio', 'files' => true, 'filesOnly' => true, 'extensions' => 'pdf'),
+            'sql'       => "binary(16) NULL"
         ),
         'services'             => array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['services'],
             'inputType' => 'textarea',
-            'eval'      => array('rte' => 'tinyFlash', 'tl_class' => 'w100'),
+            'eval'      => array('rte' => 'tinyMCE', 'tl_class' => 'w100'),
             'sql'       => "text NULL"
         ),
         'published'            => array
@@ -421,10 +421,17 @@ class tl_estates extends Backend
      */
     public function showEstateList($arrRow)
     {
-        return '<div>
-    <img src=" ' . $arrRow['display_picture'] . '  " style="height:100px; width:100px; float:left; margin-right: 1em;" /><p><strong>' . $arrRow['type'] . '</strong> <br>' . $arrRow['title'] . '</p>
-    <span> ' . $arrRow['expose'] . ' </span>
-    </div>' . "\n";
+        /** @var FilesModel $objFile */
+        $filePath = \FilesModel::findByUuid($arrRow['display_picture']);
+        if (is_file(System::getContainer()->getParameter('kernel.project_dir') . '/' . $filePath->path)) {
+            $sidebar = '<img src="' . $filePath->path . '" style="height:100px; width:100px; float:left; margin-right: 1em;" />';
+        } else {
+            $sidebar = '<div style="display:inline-block;height:100px; width:100px; margin-right: 1em; float:left;"></div>';
+        }
+
+        return '<div>' . $sidebar . '<p><strong > ' . $arrRow['type'] . ' </strong > <br > ' . $arrRow['title'] . ' </p>
+    <span > ' . $arrRow['expose'] . ' </span >
+    </div >' . "\n";
     }
 
 }

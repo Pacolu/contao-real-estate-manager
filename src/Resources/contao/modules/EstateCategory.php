@@ -3,15 +3,15 @@
  * Refer to LICENSE.txt distributed with the Real Estate bundle for notice of license
  */
 
-namespace Pacolu\RealEstateBundle\Module;
+namespace Pacolu\RealEstateBundle\Modules;
 
 use Contao\Module;
 use Contao\PageModel;
-use Pacolu\RealEstateBundle\Model\RealEstateModel;
+use Pacolu\RealEstateBundle\Models\RealEstate;
 
 /**
  * Shows a list view for a specific real estate type
- * Front end module "Real Estate Category Page"
+ * Front end module "Estate Category"
  *
  * @author Benjamin Heuer <https://github.com/Pacolu>
  */
@@ -21,7 +21,7 @@ class EstateCategory extends Module
      * Template
      * @var string
      */
-    protected $strTemplate = 'mod_object_category';
+    protected $strTemplate = 'mod_objectCategory';
 
     /**
      * Prepare Frontend for showing a list of real estates
@@ -47,7 +47,7 @@ class EstateCategory extends Module
             $pid = 2;
         }
 
-        $realEstatesTmp = RealEstateModel::findByPid($pid);
+        $realEstatesTmp = RealEstate::findByPid($pid);
 
         while ($realEstatesTmp->next()) {
 
@@ -89,5 +89,3 @@ class EstateCategory extends Module
     }
 
 }
-
-class_alias(EstateCategory::class, 'EstateCategory');

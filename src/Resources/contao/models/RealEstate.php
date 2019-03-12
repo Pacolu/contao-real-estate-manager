@@ -3,7 +3,7 @@
  * Refer to LICENSE.txt distributed with the Real Estate bundle for notice of license
  */
 
-namespace Pacolu\RealEstateBundle\Model;
+namespace Pacolu\RealEstateBundle\Models;
 
 use Contao\Model;
 use Contao\Model\Collection;
@@ -57,17 +57,17 @@ use Contao\Model\Collection;
  * @property string $expose_pdf
  * @property string $energy_certificate
  *
- * @method static RealEstateModel|null findById($id, array $opt = array())
+ * @method static RealEstate|null findById($id, array $opt = array())
  *
- * @method static Collection|RealEstateModel[]|RealEstateModel|null findByPid($val, array $opt = array())
- * @method static Collection|RealEstateModel[]|RealEstateModel|null findMultipleByIds($val, array $opt = array())
- * @method static Collection|RealEstateModel[]|RealEstateModel|null findAll(array $opt = array())
+ * @method static Collection|RealEstate[]|RealEstate|null findByPid($val, array $opt = array())
+ * @method static Collection|RealEstate[]|RealEstate|null findMultipleByIds($val, array $opt = array())
+ * @method static Collection|RealEstate[]|RealEstate|null findAll(array $opt = array())
  *
  * Repository to load real estate properties
  *
  * @author Benjamin Heuer <https://github.com/Pacolu>
  */
-class RealEstateModel extends Model
+class RealEstate extends Model
 {
 
     /**
@@ -82,7 +82,7 @@ class RealEstateModel extends Model
      * @param int[] $arrPids The real estate type ids
      * @param array $arrOptions An optional options array
      *
-     * @return Collection|RealEstateModel[]|RealEstateModel|null A collection of models or null if there are no fitting objects
+     * @return Collection|RealEstate[]|RealEstate|null A collection of models or null if there are no fitting objects
      */
     public static function findMultipleByPids(array $arrPids, array $arrOptions = array())
     {
@@ -96,5 +96,3 @@ class RealEstateModel extends Model
         return static::findBy($arrColumns, null, $arrOptions);
     }
 }
-
-class_alias(RealEstateModel::class, 'RealEstateModel');

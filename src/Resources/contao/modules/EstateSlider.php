@@ -3,24 +3,24 @@
  * Refer to LICENSE.txt distributed with the Real Estate bundle for notice of license
  */
 
-namespace Pacolu\RealEstateBundle\Module;
+namespace Pacolu\RealEstateBundle\Modules;
 
 use Contao\Module;
-use Pacolu\RealEstateBundle\Model\RealEstateModel;
+use Pacolu\RealEstateBundle\Models\RealEstate;
 
 /**
  * Shows all real estates as a slider with some key features
- * Front end module "Real Estate Management"
+ * Front end module "Estate Slider"
  *
  * @author Benjamin Heuer <https://github.com/Pacolu>
  */
-class EstateManagement extends Module
+class EstateSlider extends Module
 {
     /**
      * Template
      * @var string
      */
-    protected $strTemplate = 'mod_object_management';
+    protected $strTemplate = 'mod_objectSlider';
 
     /**
      *  Prepare Frontend for real estate slider
@@ -29,7 +29,7 @@ class EstateManagement extends Module
     {
         $result = array();
 
-        $realEstates = RealEstateModel::findMultipleByPids(array(2, 3), array('limit' => 20));
+        $realEstates = RealEstate::findMultipleByPids(array(2, 3), array('limit' => 20));
         if ($realEstates !== null) {
             while ($realEstates->next()) {
                 if ($realEstates->pid == 3) {
@@ -61,5 +61,3 @@ class EstateManagement extends Module
     }
 
 }
-
-class_alias(EstateManagement::class, 'EstateManagement');

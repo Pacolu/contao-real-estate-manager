@@ -3,7 +3,7 @@
  * Refer to LICENSE.txt distributed with the Real Estate bundle for notice of license
  */
 
-namespace Pacolu\RealEstateBundle\Module;
+namespace Pacolu\RealEstateBundle\Modules;
 
 use Contao\Config;
 use Contao\File;
@@ -11,11 +11,11 @@ use Contao\Image;
 use Contao\Module;
 use Contao\StringUtil;
 use Contao\System;
-use Pacolu\RealEstateBundle\Model\RealEstateModel;
+use Pacolu\RealEstateBundle\Models\RealEstate;
 
 /**
  * Shows all details for one real estate
- * Front end module "Real Estate Details Page"
+ * Front end module "Estate Details Page"
  *
  * @author Benjamin Heuer <https://github.com/Pacolu>
  */
@@ -25,7 +25,7 @@ class EstateDetailsPage extends Module
      * Template
      * @var string
      */
-    protected $strTemplate = 'mod_object_details';
+    protected $strTemplate = 'mod_objectDetails';
 
     /**
      * Prepare Frontend for showing all details about one real estate
@@ -35,7 +35,7 @@ class EstateDetailsPage extends Module
     protected function compile()
     {
         $intId = ($this->Input->get('id')) ? $this->Input->get('id') : 1;
-        $realEstate = RealEstateModel::findById($intId);
+        $realEstate = RealEstate::findById($intId);
         $expose = $this->getDownloadableFile($realEstate->expose_pdf);
         $energyCertificate = $this->getDownloadableFile($realEstate->energy_certificate);
 
@@ -142,5 +142,3 @@ class EstateDetailsPage extends Module
         return $file;
     }
 }
-
-class_alias(EstateDetailsPage::class, 'EstateDetailsPage');
