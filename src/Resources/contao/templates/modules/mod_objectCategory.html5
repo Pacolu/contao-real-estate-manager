@@ -1,4 +1,4 @@
-<div class="objektkat">
+<div id="objektkat">
     <?php $counter = 0; ?>
     <?php foreach ($this->realEstates as $realEstate): ?>
         <?php if ($counter != 0): ?>
@@ -20,8 +20,8 @@
                      width="<?php echo $realEstate['mainImage']['width']; ?>"
                      height="<?php echo $realEstate['mainImage']['height']; ?>"
                      alt="<?php echo $realEstate['alt']; ?>"/>
-                <div class="img-shadow">
-                    <img class="no-border" width="<?php echo $bildinfos[0]; ?>" height="15" alt="Shadow"
+                <div class="img-shadow objekt">
+                    <img class="no-border" width="<?php echo $realEstate['mainImage']['width']; ?>" alt="Shadow"
                          src="files/default/images/img-shadow.png"/>
                 </div>
             </div>
@@ -61,12 +61,10 @@
                                         continue;
                                     } else {
                                         if ($firstcheck == 1) {
-                                            $key = str_replace(array('ue', 'ae', 'oe'), array('&uuml;', '&auml;', '&ouml;'), $key);
-                                            echo "<tr><td class='first'>" . $key . ":</td><td class='first'>" . $value . "</td></tr>";
+                                            echo "<tr><td class='first'>" . $GLOBALS['TL_LANG']['RealEstate'][$key] . ":</td><td class='first'>" . $value . "</td></tr>";
                                             $firstcheck = 0;
                                         } else {
-                                            $key = str_replace(array('ue', 'ae', 'oe'), array('&uuml;', '&auml;', '&ouml;'), $key);
-                                            echo "<tr><td>" . $key . ":</td><td>" . $value . "</td></tr>";
+                                            echo "<tr><td>" . $GLOBALS['TL_LANG']['RealEstate'][$key] . ":</td><td>" . $value . "</td></tr>";
                                         }
                                     }
                                 }
@@ -82,8 +80,9 @@
                             <?php $counter++; ?>
                         <?php else: ?>
                             <?php if ($realEstate['published'] == true): ?>
-                                <a class="moreteasing button" href="<?php echo $realEstate['href']; ?>">Details
-                                    Ansehen</a>
+                                <a class="moreteasing button" href="<?php echo $realEstate['href']; ?>">
+                                    Details Ansehen
+                                </a>
                             <?php endif; ?>
                         <?php endif; ?>
                     </div>

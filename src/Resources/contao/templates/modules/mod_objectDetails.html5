@@ -7,7 +7,7 @@ if ($objPage) {
 ?>
 <div class="detail-page">
     <?php $this->Import('Environment');
-    if ((sha1(session_id() . (!$GLOBALS['TL_CONFIG']['disableIpCheck'] ? $this->Environment->ip : '') . 'BE_USER_AUTH') == $this->Input->cookie('BE_USER_AUTH'))): ?>
+    if (BE_USER_LOGGED_IN || $this->hasAuthenticatedBackendUser()): ?>
         <a class="print_it" href="javascript:window.print()"> <img src="/files/default/images/print.gif" width="20"
                                                                    height="16" border="0" alt=""> </a>
     <?php endif; ?>
@@ -44,12 +44,10 @@ if ($objPage) {
                             continue;
                         } else {
                             if ($firstcheck == 1) {
-                                $key = str_replace(array('ue', 'ae', 'oe'), array('&uuml;', '&auml;', '&ouml;'), $key);
-                                echo "<tr><td class='first'>" . $key . ":</td><td class='first'>" . $value . "</td></tr>";
+                                echo "<tr><td class='first'>" . $GLOBALS['TL_LANG']['RealEstate'][$key] . ":</td><td class='first'>" . $value . "</td></tr>";
                                 $firstcheck = 0;
                             } else {
-                                $key = str_replace(array('ue', 'ae', 'oe'), array('&uuml;', '&auml;', '&ouml;'), $key);
-                                echo "<tr><td>" . $key . ":</td><td>" . $value . "</td></tr>";
+                                echo "<tr><td>" . $GLOBALS['TL_LANG']['RealEstate'][$key] . ":</td><td>" . $value . "</td></tr>";
                             }
                         }
                     }
@@ -72,15 +70,14 @@ if ($objPage) {
                     if ($value == '' || $value == ' &euro;' || $value == ' m&sup2;') {
                         continue;
                     } else {
-                        if ($key == 'Zusatzinformationen') {
+                        if ($key == 'information') {
                             if (isset($this->expose)) {
                                 echo '<tr><td>Expos&eacute;:</td><td><p><img src="' . $this->expose["icon"] . '" width="18" height="18" alt="' . $this->expose["mime"] . '" class="mime_icon"> <a href="' . $this->expose["href"] . '" title="' . $this->expose["title"] . '">' . $this->expose["link"] . ' <span class="size">(' . $this->expose["filesize"] . ')</span></a></p></td></tr>';
                             }
                             echo "<tr><td colspan='2'><h2>Besonderheiten</h2></td></tr>";
                             echo "<tr><td colspan='2'>" . $value . "</td></tr>";
                         } else {
-                            $key = str_replace(array('ue', 'ae', 'oe'), array('&uuml;', '&auml;', '&ouml;'), $key);
-                            echo "<tr><td>" . $key . ":</td><td>" . $value . "</td></tr>";
+                            echo "<tr><td>" . $GLOBALS['TL_LANG']['RealEstate'][$key] . ":</td><td>" . $value . "</td></tr>";
                         }
                     }
                 }

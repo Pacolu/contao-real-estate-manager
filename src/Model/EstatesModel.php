@@ -58,9 +58,8 @@ use \Model\Collection;
  *
  * @method static EstatesModel|null findById($id, array $opt = array())
  *
- * @method static Collection|EstatesModel[]|EstatesModel|null findByPid($val, array $opt = array())
- * @method static Collection|EstatesModel[]|EstatesModel|null findMultipleByIds($val, array $opt = array())
- * @method static Collection|EstatesModel[]|EstatesModel|null findAll(array $opt = array())
+ * @method static Collection|EstatesModel[]|EstatesModel|null findMultipleByIds($val, array $arrOptions = array())
+ * @method static Collection|EstatesModel[]|EstatesModel|null findAll(array $arrOptions = array())
  *
  * Repository to load real estate properties
  *
@@ -93,6 +92,26 @@ class EstatesModel extends \Model
         }
 
         return static::findBy($arrColumns, null, $arrOptions);
+    }
+
+    /**
+     * Find sent newsletters by their parent ID
+     *
+     * @param int[] $val The real estate type id
+     * @param array $arrOptions An optional options array
+     *
+     * @return Collection|EstatesModel[]|EstatesModel|null A collection of models or null if there are no fitting objects
+     */
+    public static function findByPid($val, array $arrOptions = array())
+    {
+        $t = static::$strTable;
+        $arrColumns = array("$t.pid = ?");
+
+        if (!isset($arrOptions['order'])) {
+            $arrOptions['order'] = "$t.published DESC, $t.date DESC";
+        }
+
+        return static::findBy($arrColumns, $val, $arrOptions);
     }
 }
 class_alias(EstatesModel::class, 'EstatesModel');

@@ -14,9 +14,9 @@ use \Model\Collection;
  * @property integer $tstamp
  * @property string $title
  *
- * @method static EstateTypesModel|null findById($id, array $opt = array())
+ * @method static EstateTypesModel|null findById($id, array $arrOptions = array())
  *
- * @method static Collection|EstateTypesModel[]|EstateTypesModel|null findAll(array $opt = array())
+ * @method static Collection|EstateTypesModel[]|EstateTypesModel|null findAll(array $arrOptions = array())
  *
  * Repository to load real estate type properties
  *

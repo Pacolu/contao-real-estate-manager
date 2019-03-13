@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff version="1.1">
+  <file datatype="php" original="src/Resources/contao/languages/en/tl_estates.php" source-language="en">
+    <body>
+              <trans-unit id="tl_estates.title_legend">
+                <source>object descriptions</source>
+                <target>Object Descriptions</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.adress_legend">
+                <source>Address data</source>
+                <target>Address data</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.information_legend">
+                <source>General information</source>
+                <target>General information</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.miet_legend">
+                <source>Information for renting</source>
+                <target>Information for renting</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.kauf_legend">
+                <source>Information for selling</source>
+                <target>Information for selling</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.extra_legend">
+                <source>Extra information</source>
+                <target>Extra information</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.media_legend">
+                <source>Media information</source>
+                <target>Media information</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.published_legend">
+                <source>Availability</source>
+                <target>Availability</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.referenz_legend">
+                <source>house services</source>
+                <target>house services</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.title.0">
+                <source>Title of the object</source>
+                <target>Title of the object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.title.1">
+                <source>Please enter a meaningful title</source>
+                <target>Please enter a meaningful title</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.type.0">
+                <source>Type of house</source>
+                <target>Type of house</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.type.1">
+                <source>Please enter the type of object (single-family house, multiple-family house etc.).</source>
+                <target>Please enter the type of object (single-family house, multiple-family house etc.).</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.expose.0">
+                <source>Expose number</source>
+                <target>Expose number</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.expose.1">
+                <source>Enter a unique reference of the object here.</source>
+                <target>Enter a unique reference of the object here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.location.0">
+                <source>Adresse</source>
+                <target>Adresse</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.location.1">
+                <source>Please enter the street postcode and city.</source>
+                <target>Please enter the street postcode and city.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.floor.0">
+                <source>floor of the object</source>
+                <target>floor of the object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.floor.1">
+                <source>If available, on which floor the object is located.</source>
+                <target>If available, on which floor the object is located.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.number_of_floors.0">
+                <source>Number of floors</source>
+                <target>Number of floors</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.number_of_floors.1">
+                <source>Enter the number of floors of the object house.</source>
+                <target>Enter the number of floors of the object house.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.shared_flat.0">
+                <source>Is a WG possible?</source>
+                <target>Is a WG possible?</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.shared_flat.1">
+                <source>Enter a statement here.</source>
+                <target>Enter a statement here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.date.0">
+                <source>Set clean on</source>
+                <target>Set clean on</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.date.1">
+                <source>Enter here the date for sorting.</source>
+                <target>Enter here the date for sorting.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.rooms.0">
+                <source>Number of rooms</source>
+                <target>Number of rooms</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.rooms.1">
+                <source>Enter the number of rooms here.</source>
+                <target>Enter the number of rooms here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.condition.0">
+                <source>state of the object</source>
+                <target>state of the object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.condition.1">
+                <source>Enter the state of the object here.</source>
+                <target>Enter the state of the object here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.year_of_construction.0">
+                <source>year of construction</source>
+                <target>year of construction</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.year_of_construction.1">
+                <source>Enter the year of construction of the object house here.</source>
+                <target>Enter the year of construction of the object house here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.living_space.0">
+                <source>Living space in square meters</source>
+                <target>Living space in square meters</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.living_space.1">
+                <source>Please enter the living space(without square meters).</source>
+                <target>Please enter the living space(without square meters).</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.heating.0">
+                <source>heating type</source>
+                <target>heating type</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.heating.1">
+                <source>Enter the heating type here.</source>
+                <target>Enter the heating type here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.balcony.0">
+                <source>balcony yes no</source>
+                <target>balcony yes no</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.balcony.1">
+                <source>Please specify if a balcony is available.</source>
+                <target>Please specify if a balcony is available.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.pets.0">
+                <source>pet question</source>
+                <target>pet question</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.pets.1">
+                <source>Are pets possible or not?</source>
+                <target>Are pets possible or not?</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.pitch.0">
+                <source>pitch</source>
+                <target>pitch</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.pitch.1">
+                <source>Are pitches available?</source>
+                <target>Are pitches available?</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.energy_certificate.0">
+                <source>energy pass of the object</source>
+                <target>energy pass of the object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.energy_certificate.1">
+                <source>Here you choose a PDf, which represents the energy pass</source>
+                <target>Here you choose a PDf, which represents the energy pass</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.bail.0">
+                <source>deposit amount</source>
+                <target>deposit amount</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.bail.1">
+                <source>How much is the deposit for the object? If the amount is money, please write € behind it.</source>
+                <target>How much is the deposit for the object? If the amount is money, please write € behind it.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.cold_rent.0">
+                <source>Rent without additional costs</source>
+                <target>Rent without additional costs</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.cold_rent.1">
+                <source>Please enter the cold rent.</source>
+                <target>Please enter the cold rent.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.warm_rent.0">
+                <source>Rent with additional costs</source>
+                <target>Rent with additional costs</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.warm_rent.1">
+                <source>Please enter the warm rent.</source>
+                <target>Please enter the warm rent.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.additional_costs.0">
+                <source>additional costs</source>
+                <target>additional costs</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.additional_costs.1">
+                <source>Enter here the amount without € at the end.</source>
+                <target>Enter here the amount without € at the end.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.heating_cost.0">
+                <source>Heating Cost</source>
+                <target>Heating Cost</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.heating_cost.1">
+                <source>Enter here the amount without € at the end.</source>
+                <target>Enter here the amount without € at the end.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.usable_area.0">
+                <source>usable area in square meters</source>
+                <target>usable area in square meters</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.usable_area.1">
+                <source>Please specify the usable area(without square meters).</source>
+                <target>Please specify the usable area(without square meters).</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.number_of_bedrooms.0">
+                <source>Number of bedrooms</source>
+                <target>Number of bedrooms</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.number_of_bedrooms.1">
+                <source>Enter the number of bedrooms here.</source>
+                <target>Enter the number of bedrooms here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.number_of_bathrooms.0">
+                <source>Number of bedrooms</source>
+                <target>Number of bedrooms</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.number_of_bathrooms.1">
+                <source>Enter the number of bedrooms here.</source>
+                <target>Enter the number of bedrooms here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.kitchen.0">
+                <source>kitchen type</source>
+                <target>kitchen type</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.kitchen.1">
+                <source>Please enter type of kitchen(fitted kitchen, without kitchen etc.).</source>
+                <target>Please enter type of kitchen(fitted kitchen, without kitchen etc.).</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.bath.0">
+                <source>Type of bathroom</source>
+                <target>Type of bathroom</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.bath.1">
+                <source>Enter the type of the bathroom here.</source>
+                <target>Enter the type of the bathroom here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.purchase_price.0">
+                <source>purchase price</source>
+                <target>purchase price</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.purchase_price.1">
+                <source>If object for sale please enter sale price without €</source>
+                <target>If object for sale please enter sale price without €</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.commission.0">
+                <source>commission amount</source>
+                <target>commission amount</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.commission.1">
+                <source>How much is the commission for the object? In case of money amount please write € behind.</source>
+                <target>How much is the commission for the object? In case of money amount please write € behind.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.plot_area.0">
+                <source>plot area in square meters</source>
+                <target>plot area in square meters</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.plot_area.1">
+                <source>Please specify the plot area(without square meters).</source>
+                <target>Please specify the plot area(without square meters).</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.rental_income.0">
+                <source>rental income p.a.</source>
+                <target>rental income p.a.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.rental_income.1">
+                <source>Please enter the rental income (without €).</source>
+                <target>Please enter the rental income (without €).</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.x_times_rent.0">
+                <source>X-fold rent</source>
+                <target>X-fold rent</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.x_times_rent.1">
+                <source>Please enter the X-fold rent.</source>
+                <target>Please enter the X-fold rent.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.available.0">
+                <source>From when available.</source>
+                <target>From when available.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.available.1">
+                <source>Enter here the date or the text, how the object can be moved.</source>
+                <target>Enter here the date or the text, how the object can be moved.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.visit.0">
+                <source>From when Visitable</source>
+                <target>From when Visitable</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.visit.1">
+                <source>Enter here the date or the text how the object can be viewed.</source>
+                <target>Enter here the date or the text how the object can be viewed.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.object_id.0">
+                <source>Provider Object ID</source>
+                <target>Provider Object ID</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.object_id.1">
+                <source>Enter the Provider Object ID here, if available...</source>
+                <target>Enter the Provider Object ID here, if available...</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.immonet_number.0">
+                <source>Number of the object in Immonet</source>
+                <target>Number of the object in Immonet</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.immonet_number.1">
+                <source>Enter the unique number for the object in Immonet here.</source>
+                <target>Enter the unique number for the object in Immonet here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.information.0">
+                <source>Additional information</source>
+                <target>Additional information</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.information.1">
+                <source>Please enter additional information relevant to this object here.</source>
+                <target>Please enter additional information relevant to this object here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.display_picture.0">
+                <source>display image of the object</source>
+                <target>display image of the object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.display_picture.1">
+                <source>Here you select the image for the object to be used as preview image.</source>
+                <target>Here you select the image for the object to be used as preview image.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.gallery.0">
+                <source>Images of the object</source>
+                <target>Images of the object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.gallery.1">
+                <source>Here you select all other images for the object.</source>
+                <target>Here you select all other images for the object.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.expose_pdf.0">
+                <source>Expose of the object</source>
+                <target>Expose of the object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.expose_pdf.1">
+                <source>Here you select a PDf which describes the object in more detail.</source>
+                <target>Here you select a PDf which describes the object in more detail.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.services.0">
+                <source>Services</source>
+                <target>Services</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.services.1">
+                <source>Enter the services for the object in a list here.</source>
+                <target>Enter the services for the object in a list here.</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.published.0">
+                <source>Object still available?</source>
+                <target>Object still available?</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.published.1">
+                <source>Can this object still be rented/sold?</source>
+                <target>Can this object still be rented/sold?</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.new.0">
+                <source>New object</source>
+                <target>New object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.new.1">
+                <source>Create a new object</source>
+                <target>Create a new object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.show.0">
+                <source>object details</source>
+                <target>object details</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.show.1">
+                <source>Show the details of %s</source>
+                <target>Show the details of %s</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.edit.0">
+                <source>Edit object</source>
+                <target>Edit object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.edit.1">
+                <source>Edit object %s</source>
+                <target>Edit object %s</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.copy.0">
+                <source>Copy object</source>
+                <target>Copy object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.copy.1">
+                <source>Duplicate object %s</source>
+                <target>Duplicate object %s</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.delete.0">
+                <source>Delete object</source>
+                <target>Delete object</target>
+              </trans-unit>
+              <trans-unit id="tl_estates.delete.1">
+                <source>Delete object %s</source>
+                <target>Delete object %s</target>
+              </trans-unit>
+            </body>
+  </file>
+</xliff>

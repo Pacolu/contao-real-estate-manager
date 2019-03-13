@@ -142,11 +142,11 @@ class EstateDetailsPage extends Module
     }
 
     /**
-     * @param string $fileSRC
+     * @param string|null $fileSRC
      * @return string[]
      * @throws \Exception
      */
-    private function getDownloadableFile(string $fileSRC)
+    private function getDownloadableFile($fileSRC)
     {
         $fileModel = \FilesModel::findByUuid($fileSRC);
         if (empty($fileModel) || !file_exists(System::getContainer()->getParameter('kernel.project_dir') . '/' . $fileModel->path)) {

@@ -6,7 +6,7 @@
 // Back end modules
 array_insert($GLOBALS['BE_MOD']['content'], 1, array
 (
-    'Real Estate Manager' => array
+    'real_estate_manager' => array
     (
         'tables' => array('tl_estate_types', 'tl_estates',),
         'icon'   => 'system/modules/real-estate-manager/html/icon.gif',

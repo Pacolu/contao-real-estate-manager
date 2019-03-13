@@ -21,8 +21,8 @@
             <img src="<?php echo $realEstate['mainImage']['path']; ?>"
                  width="<?php echo $realEstate['mainImage']['width']; ?>"
                  height="<?php echo $realEstate['mainImage']['height']; ?>" alt="<?php echo $realEstate['alt']; ?>"/>
-            <div class="img-shadow">
-                <img class="no-border" width="<?php echo $realEstate['mainImage']['width']; ?>" height="15"
+            <div class="img-shadow objekt">
+                <img class="no-border" width="<?php echo $realEstate['mainImage']['width']; ?>"
                      alt="Shadow" src="files/default/images/img-shadow.png"/>
             </div>
         </div>

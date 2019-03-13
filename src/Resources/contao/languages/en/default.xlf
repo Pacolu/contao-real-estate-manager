@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xliff version="1.1">
-  <file datatype="php" original="src/Resources/contao/languages/en/default.xlf" source-language="en" target-language="de">
+  <file datatype="php" original="src/Resources/contao/languages/en/default.php" source-language="en">
     <body>
       <trans-unit id="RealEstate.livingSpace">
         <source>livingSpace</source>
-        <target>Wohnfläche</target>
+        <target>Living Space</target>
       </trans-unit>
       <trans-unit id="RealEstate.rooms">
         <source>rooms</source>
-        <target>Zimmer</target>
+        <target>Rooms</target>
       </trans-unit>
       <trans-unit id="RealEstate.category">
         <source>category</source>
-        <target>Kategorie</target>
+        <target>Category</target>
       </trans-unit>
       <trans-unit id="RealEstate.warmRent">
         <source>warmRent</source>
-        <target>Warmmiete</target>
+        <target>Warm Rent</target>
       </trans-unit>
       <trans-unit id="RealEstate.exposeNr">
         <source>exposeNr</source>
@@ -24,139 +24,139 @@
       </trans-unit>
       <trans-unit id="RealEstate.location">
         <source>location</source>
-        <target>Lage</target>
+        <target>Location</target>
       </trans-unit>
       <trans-unit id="RealEstate.mainImage">
         <source>mainImage</source>
-        <target>Hauptbild</target>
+        <target>Main Image</target>
       </trans-unit>
       <trans-unit id="RealEstate.services">
         <source>services</source>
-        <target>Leistungen</target>
+        <target>Services</target>
       </trans-unit>
       <trans-unit id="RealEstate.information">
         <source>information</source>
-        <target>Zusatzinformationen</target>
+        <target>Additional Information</target>
       </trans-unit>
       <trans-unit id="RealEstate.published">
         <source>published</source>
-        <target>Veröffentlicht</target>
+        <target>Published</target>
       </trans-unit>
       <trans-unit id="RealEstate.rentalIncomeYearly">
         <source>rentalIncomeYearly</source>
-        <target>Mieteinnahmen p.a.</target>
+        <target>Rental Income p.a.</target>
       </trans-unit>
       <trans-unit id="RealEstate.purchasePrice">
         <source>purchasePrice</source>
-        <target>Kaufpreis</target>
+        <target>Purchase Price</target>
       </trans-unit>
       <trans-unit id="RealEstate.title">
         <source>title</source>
-        <target>Titel</target>
+        <target>Title</target>
       </trans-unit>
       <trans-unit id="RealEstate.type">
         <source>type</source>
-        <target>Art des Hauses</target>
+        <target>Kind of House</target>
       </trans-unit>
       <trans-unit id="RealEstate.galleryImages">
         <source>galleryImages</source>
-        <target>Gallerie Bilder</target>
+        <target>Gallery Images</target>
       </trans-unit>
       <trans-unit id="RealEstate.plotArea">
         <source>plotArea</source>
-        <target>Grundstücksfläche</target>
+        <target>Plot Area</target>
       </trans-unit>
       <trans-unit id="RealEstate.usableArea">
         <source>usableArea</source>
-        <target>Nutzfläche</target>
+        <target>Usable Area</target>
       </trans-unit>
       <trans-unit id="RealEstate.yearOfConstruction">
         <source>yearOfConstruction</source>
-        <target>Baujahr</target>
+        <target>Year of Construction</target>
       </trans-unit>
       <trans-unit id="RealEstate.commission">
         <source>commission</source>
-        <target>Provision</target>
+        <target>Commision</target>
       </trans-unit>
       <trans-unit id="RealEstate.coldRent">
         <source>coldRent</source>
-        <target>Kaltmiete</target>
+        <target>Cold Rent</target>
       </trans-unit>
       <trans-unit id="RealEstate.additionalCosts">
         <source>additionalCosts</source>
-        <target>Nebenkosten</target>
+        <target>Additional Costs</target>
       </trans-unit>
       <trans-unit id="RealEstate.heatingCost">
         <source>heatingCost</source>
-        <target>Heizkosten</target>
+        <target>Heating Cost</target>
       </trans-unit>
       <trans-unit id="RealEstate.xTimesRent">
         <source>xTimesRent</source>
-        <target>X Fache Miete</target>
+        <target>X Times Rent</target>
       </trans-unit>
       <trans-unit id="RealEstate.bail">
         <source>bail</source>
-        <target>Kaution</target>
+        <target>Bail</target>
       </trans-unit>
       <trans-unit id="RealEstate.floor">
         <source>floor</source>
-        <target>Etage</target>
+        <target>Floor</target>
       </trans-unit>
       <trans-unit id="RealEstate.numberOfFloors">
         <source>numberOfFloors</source>
-        <target>Anzahl der Etagen</target>
+        <target>Number of Floors</target>
       </trans-unit>
       <trans-unit id="RealEstate.sharedFlat">
         <source>sharedFlat</source>
-        <target>WG möglich?</target>
+        <target>Shared Flat possible?</target>
       </trans-unit>
       <trans-unit id="RealEstate.heating">
         <source>heating</source>
-        <target>Heizung</target>
+        <target>Heating</target>
       </trans-unit>
       <trans-unit id="RealEstate.numberOfBedrooms">
         <source>numberOfBedrooms</source>
-        <target>Schlafzimmer</target>
+        <target>Number of Bedrooms</target>
       </trans-unit>
       <trans-unit id="RealEstate.numberOfBathrooms">
         <source>numberOfBathrooms</source>
-        <target>Bad</target>
+        <target>Number of Bathrooms</target>
       </trans-unit>
       <trans-unit id="RealEstate.condition">
         <source>condition</source>
-        <target>Zustand</target>
+        <target>Condition</target>
       </trans-unit>
       <trans-unit id="RealEstate.available">
         <source>available</source>
-        <target>Verfügbar ab</target>
+        <target>Available as of</target>
       </trans-unit>
       <trans-unit id="RealEstate.visit">
         <source>visit</source>
-        <target>Besichtigung</target>
+        <target>Visit</target>
       </trans-unit>
       <trans-unit id="RealEstate.kitchen">
         <source>kitchen</source>
-        <target>Küche</target>
+        <target>Kitchen</target>
       </trans-unit>
       <trans-unit id="RealEstate.balcony">
         <source>balcony</source>
-        <target>Balkon</target>
+        <target>Balcony</target>
       </trans-unit>
       <trans-unit id="RealEstate.pets">
         <source>pets</source>
-        <target>Haustiere</target>
+        <target>Pets</target>
       </trans-unit>
       <trans-unit id="RealEstate.pitch">
         <source>pitch</source>
-        <target>Stellplatz</target>
+        <target>Pitch</target>
       </trans-unit>
       <trans-unit id="RealEstate.objectId">
         <source>objectId</source>
-        <target>Objekt Id</target>
+        <target>Object Id</target>
       </trans-unit>
       <trans-unit id="RealEstate.immonetNumber">
         <source>immonetNumber</source>
-        <target>Immonet Nummer</target>
+        <target>Immonet Number</target>
       </trans-unit>
     </body>
   </file>
