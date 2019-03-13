@@ -17,9 +17,9 @@ array_insert($GLOBALS['BE_MOD']['content'], 1, array
 array_insert($GLOBALS['FE_MOD'], 2, array
 (
     'miscellaneous' => array(
-        'Estate Slider' => 'Pacolu\\RealEstateBundle\\Modules\\EstateSlider',
-        'Estate Details Page' => 'Pacolu\\RealEstateBundle\\Modules\\EstateDetailsPage',
-        'Estate Category' => 'Pacolu\\RealEstateBundle\\Modules\\EstateCategory',
+        'Estate Slider' => 'Pacolu\\RealEstateBundle\\Module\\EstateSlider',
+        'Estate Details Page' => 'Pacolu\\RealEstateBundle\\Module\\EstateDetailsPage',
+        'Estate Category' => 'Pacolu\\RealEstateBundle\\Module\\EstateCategory',
 	)
 ));
 

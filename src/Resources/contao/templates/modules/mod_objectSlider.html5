@@ -1,86 +1,77 @@
 <?php $this->extend('block_unsearchable'); ?>
-<?php die(); ?>
 <?php $this->block('content'); ?>
 
 <div class="objektuebersicht">
-  <h2>Unsere neuen Objekte</h2>
-  <a href="{{link_url::6}}" >Alle Objekte ansehen</a>
-  <div class="teasing">
-  <?php foreach ($this->realEstates as $realEstates): ?>
-      <?php if($realEstates['available'] == false){
-        echo '<div class="tease Objekt-'.$realEstates['id'].' notsell">';
-        if($realEstates['Kategorie']  == '3'){
-          echo '<span class="sellinfo">Verkauft</span>';
-        }else{ 
-          echo '<span class="sellinfo">Vermietet</span>';
-        }
-      }else{
-        echo '<div class="tease Objekt-'.$realEstates['id'].'">';
-      } ?>
-      <?php
-        $bildinfos = getimagesize($realEstates['display_picture']);
-        $format=$bildinfos[1]/$bildinfos[0];
-        if($bildinfos[0] > 275 ){
-          $bildinfos[0] = 275;
-          $bildinfos[1] = 275 * $format;
-        }
-        if($bildinfos[1] > 190 ){
-          $bildinfos[1] = 190;
-          $bildinfos[0] = 190 / $format;
-        }
-      ?>
-      <div class="image-container"> 
-        <img src="<?php echo $realEstates['display_picture']; ?>" width="<?php echo $bildinfos[0]; ?>" height="<?php echo $bildinfos[1]; ?>" alt="<?php echo $realEstates['alt']; ?>" />
-        <div class="img-shadow">
-          <img class="no-border" width="<?php echo $bildinfos[0]; ?>" height="15" alt="Shadow" src="files/default/images/img-shadow.png" />
+    <h2>Unsere neuen Objekte</h2>
+    <?php /* TODO DYNAMIC */ /* Link to Main "all Objects Page(6)" */ ?>
+    <a href="{{link_url::8}}">Alle Objekte ansehen</a>
+    <div class="teasing">
+        <?php foreach ($this->realEstates as $realEstate): ?>
+        <?php if ($realEstate['published'] == false) {
+            echo '<div class="tease Objekt-' . $realEstate['id'] . ' notsell">';
+            if ($realEstate['category'] == '3') {
+                echo '<span class="sellinfo">Verkauft</span>';
+            } else {
+                echo '<span class="sellinfo">Vermietet</span>';
+            }
+        } else {
+            echo '<div class="tease Objekt-' . $realEstate['id'] . '">';
+        } ?>
+        <div class="image-container">
+            <img src="<?php echo $realEstate['mainImage']['path']; ?>"
+                 width="<?php echo $realEstate['mainImage']['width']; ?>"
+                 height="<?php echo $realEstate['mainImage']['height']; ?>" alt="<?php echo $realEstate['alt']; ?>"/>
+            <div class="img-shadow">
+                <img class="no-border" width="<?php echo $realEstate['mainImage']['width']; ?>" height="15"
+                     alt="Shadow" src="files/default/images/img-shadow.png"/>
+            </div>
         </div>
-      </div>
-      <table border="0" cellpadding="0">
-        <tr>
-          <td class="typ-td">Typ</td>
-          <td class="typ-td"><?php echo $realEstates['type']; ?></td>
-        </tr>
-        <tr>
-          <td>Lage</td>
-          <td height="73px;" ><?php echo $realEstates['location']; ?></td>
-        </tr>
-        <?php if($realEstates['Kategorie'] == 3): ?>
-          <tr>
-            <td>Grundstücksgröße</td>
-            <td><?php echo $realEstates['plot_area']; ?></td>
-          </tr>
-          <tr>
-            <td>Mieteinnahmen p.a.</td>
-            <td><?php echo $realEstates['rental_income']; ?></td>
-          </tr>
-          <tr>  
-            <td class="no-border price-label"></td>
-            <td class="no-border price"><?php echo $realEstates['purchase_price']; ?></td>
-          </tr>
-        <?php else: ?>
-          <tr>
-            <td>Größe</td>
-            <td><?php echo $realEstates['living_space']; ?></td>
-          </tr>
-          <tr>
-            <td>Zimmer</td>
-            <td><?php echo $realEstates['rooms']; ?></td>
-          </tr>
-          <tr>  
-            <td class="no-border"></td>
-            <td class="no-border price"><?php echo $realEstates['warm_rent']; ?> mtl.</td>
-          </tr>
-        <?php endif; ?>
-      </table>
-      <a class="moreteasing button" href="<?php echo $realEstates['href']; ?>">Objekt Ansehen</a>
+        <table border="0" cellpadding="0">
+            <tr>
+                <td class="typ-td">Typ</td>
+                <td class="typ-td"><?php echo $realEstate['type']; ?></td>
+            </tr>
+            <tr>
+                <td>Lage</td>
+                <td height="73px;"><?php echo $realEstate['location']; ?></td>
+            </tr>
+            <?php if ($realEstate['category'] == 3): ?>
+                <tr>
+                    <td>Grundstücksgröße</td>
+                    <td><?php echo $realEstate['plotArea']; ?></td>
+                </tr>
+                <tr>
+                    <td>Mieteinnahmen p.a.</td>
+                    <td><?php echo $realEstate['rentalIncomeYearly']; ?></td>
+                </tr>
+                <tr>
+                    <td class="no-border price-label"></td>
+                    <td class="no-border price"><?php echo $realEstate['purchasePrice']; ?></td>
+                </tr>
+            <?php else: ?>
+                <tr>
+                    <td>Größe</td>
+                    <td><?php echo $realEstate['livingSpace']; ?></td>
+                </tr>
+                <tr>
+                    <td>Zimmer</td>
+                    <td><?php echo $realEstate['rooms']; ?></td>
+                </tr>
+                <tr>
+                    <td class="no-border"></td>
+                    <td class="no-border price"><?php echo $realEstate['warmRent']; ?> mtl.</td>
+                </tr>
+            <?php endif; ?>
+        </table>
+        <a class="moreteasing button" href="<?php echo $realEstate['href']; ?>">Objekt Ansehen</a>
     </div>
-  <?php endforeach; ?>
+<?php endforeach; ?>
     <div class="teasepagination">
-    <?php foreach ($this->realEstates as $realEstates): ?>
-      <a href="javascript:void(0);" title="Objekt-<?php echo $realEstates['id']; ?>">Klick</a> 
-    <?php endforeach; ?>
+        <?php foreach ($this->realEstates as $realEstate): ?>
+            <a href="javascript:void(0);" title="Objekt-<?php echo $realEstate['id']; ?>">Klick</a>
+        <?php endforeach; ?>
     </div>
-  </div> 
+</div>
 </div>
 
 <?php $this->endblock(); ?>

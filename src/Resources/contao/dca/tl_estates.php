@@ -82,7 +82,8 @@ $GLOBALS['TL_DCA']['tl_estates'] = array
     {information_legend},date,rooms,condition,year_of_construction,living_space,heating,balcony,pets,pitch,energy_certificate;
     {miet_legend},bail,cold_rent,warm_rent,additional_costs,heating_cost,usable_area,number_of_bedrooms,number_of_bathrooms,kitchen,bath;
     {kauf_legend},purchase_price,commission,plot_area,rental_income,x_times_rent;
-    {extra_legend},available,visit,information,object_id,immonet_number,display_picture,gallery,expose_pdf;
+    {extra_legend},available,visit,object_id,immonet_number;
+    {media_legend},information,display_picture,gallery,expose_pdf;
     {referenz_legend},services;
     {published_legend},published'
     ),
@@ -152,7 +153,7 @@ $GLOBALS['TL_DCA']['tl_estates'] = array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['shared_flat'],
             'inputType' => 'text',
-            'eval'      => array('maxlength' => 64, 'tl_class' => 'w100'),
+            'eval'      => array('maxlength' => 64, 'tl_class' => 'w100 clear'),
             'sql'       => "varchar(64) NOT NULL default ''"
         ),
         'date'                 => array
@@ -199,7 +200,7 @@ $GLOBALS['TL_DCA']['tl_estates'] = array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['pitch'],
             'inputType' => 'text',
-            'eval'      => array('maxlength' => 128, 'tl_class' => 'w100'),
+            'eval'      => array('maxlength' => 128, 'tl_class' => 'w100 clear'),
             'sql'       => "varchar(128) NOT NULL default ''"
         ),
         'energy_certificate'   => array
@@ -381,7 +382,7 @@ $GLOBALS['TL_DCA']['tl_estates'] = array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['gallery'],
             'inputType' => 'fileTree',
-            'eval'      => array('fieldType' => 'checkbox', 'multiple' => true, 'files' => true, 'filesOnly' => true, 'extensions' => Contao\Config::get('validImageTypes')),
+            'eval'      => array('fieldType' => 'checkbox', 'multiple' => true, 'files' => true, 'filesOnly' => true, 'extensions' => Contao\Config::get('validImageTypes'), 'tl_class' => 'gallery'),
             'sql'       => "blob NULL"
         ),
         'expose_pdf'           => array
