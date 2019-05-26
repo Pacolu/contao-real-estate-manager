@@ -1,7 +1,16 @@
 <?php
 global $objPage;
 if ($objPage) {
-    $objPage->pageTitle .= $this->preview['title'];
+    if ($this->preview['published'] == false) {
+        if ($this->preview['category'] == '3') {
+            $addition = 'VERKAUFT | ';
+        } else {
+            $addition = 'VERMIETET | ';
+        }
+        $objPage->pageTitle .= $addition . $this->preview['title'];
+    } else {
+        $objPage->pageTitle .= $this->preview['title'];
+    }
 }
 
 ?>
@@ -14,6 +23,13 @@ if ($objPage) {
     <a href="javascript:history.go(-1)" class="back-link">&lt; zur&uuml;ck zur &Uuml;bersicht</a>
     <div class="upperpage clearfix">
         <div class="left-page">
+            <?php if ($this->preview['published'] == false) {
+                if ($this->preview['category'] == '3') {
+                    echo '<span class="sellinfo">Verkauft</span>';
+                } else {
+                    echo '<span class="sellinfo">Vermietet</span>';
+                }
+            } ?>
             <a class="lightbox-image" data-fancybox-group="gallery"
                href="<?php echo $this->preview['mainImage']['path'] ?>"><img
                         src="<?php echo $this->preview['mainImage']['path'] ?>"
@@ -86,7 +102,9 @@ if ($objPage) {
             </table>
         </div>
         <div class="right-page">
-            {{insert_module::6}}
+            <?php if ($this->preview['published'] != false): ?>
+                {{insert_module::6}}
+            <?php endif; ?>
         </div>
     </div>
     <script>

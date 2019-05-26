@@ -80,7 +80,9 @@ class EstateDetailsPage extends Module
             'title'         => $realEstate->title,
             'exposeNr'      => $realEstate->expose,
             'mainImage'     => $baseImage,
-            'galleryImages' => $gallery
+            'galleryImages' => $gallery,
+            'published'     => $realEstate->published,
+            'category'      => $realEstate->pid,
         );
 
         $arrBox[] = array
@@ -121,7 +123,7 @@ class EstateDetailsPage extends Module
             'pitch'              => $realEstate->pitch,
             'objectId'           => $realEstate->object_id,
             'immonetNumber'      => $realEstate->immonet_number,
-            'information'        => $realEstate->information
+            'information'        => $realEstate->information,
         );
         $this->Template->preview = $arrPrev[0];
         $this->Template->infobox = $arrBox[0];
