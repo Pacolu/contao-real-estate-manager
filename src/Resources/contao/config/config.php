@@ -23,5 +23,11 @@ array_insert($GLOBALS['FE_MOD'], 2, array
 	)
 ));
 
+// Style sheet
+if (defined('TL_MODE') && TL_MODE == 'BE')
+{
+    $GLOBALS['TL_CSS'][] = 'bundles/pacolurealestate/css/fixes.css|static';
+}
+
 // Add permissions
 $GLOBALS['TL_PERMISSIONS'][] = 'real-estate-manager';

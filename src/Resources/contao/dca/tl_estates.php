@@ -153,7 +153,7 @@ $GLOBALS['TL_DCA']['tl_estates'] = array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['shared_flat'],
             'inputType' => 'text',
-            'eval'      => array('maxlength' => 64, 'tl_class' => 'w100 clear'),
+            'eval'      => array('maxlength' => 64, 'tl_class' => 'w100 clear-left'),
             'sql'       => "varchar(64) NOT NULL default ''"
         ),
         'date'                 => array
@@ -200,7 +200,7 @@ $GLOBALS['TL_DCA']['tl_estates'] = array
         (
             'label'     => &$GLOBALS['TL_LANG']['tl_estates']['pitch'],
             'inputType' => 'text',
-            'eval'      => array('maxlength' => 128, 'tl_class' => 'w100 clear'),
+            'eval'      => array('maxlength' => 128, 'tl_class' => 'w100 clear-left'),
             'sql'       => "varchar(128) NOT NULL default ''"
         ),
         'energy_certificate'   => array
